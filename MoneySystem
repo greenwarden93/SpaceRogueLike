@@ -1,0 +1,36 @@
+#this code sets up the money system (called credits)
+
+#variables
+
+credits = 0
+credit = 1
+small_credit_pack = 10
+medium_credit_pack = 50
+large_credit_pack = 100
+elerium = 1000 #level lock this
+
+#definitions
+
+def get_credit():
+    global credits
+    credits += credit
+
+
+def get_small_credit_pack():
+    global credits
+    credits += small_credit_pack
+
+
+def get_medium_credit_pack():
+    global credits
+    credits += medium_credit_pack
+
+
+def get_large_credit_pack():
+    global credits
+    credits += large_credit_pack
+
+
+def get_elerium():
+    global credits
+    credits += elerium
