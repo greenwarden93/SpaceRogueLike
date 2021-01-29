@@ -1,0 +1,28 @@
+#this is the code for the games inventory system
+
+#variables
+
+inventory = []
+
+
+#classes
+
+class Item (object):
+    def __init__(self, name, quantity = 1):
+        self.name = name
+        self.quantity = quantity
+
+lockpick = Item(name = 'lockpick')
+
+#functions
+
+# adds items to inventory
+
+def item_add(item):
+    inventory.append(item)
+
+# prints list of inventory
+
+def inventory_list():
+    for item in inventory:
+        print (item.name)
