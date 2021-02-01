@@ -1,0 +1,44 @@
+class CharWeapon (object):
+    def __init__(self, name, type, damage):
+        self.name = name
+        self.type = type
+        self.damage = damage
+
+sword = CharWeapon(name = sword, type = melee, damage = 10 + (strength * 1.5) + (level * 2))
+
+axe = CharWeapon(name = axe, type = melee, damage = 12 + (strength * 3)+ (level * 2))
+
+pistol = CharWeapon(name = pistol, type = ranged, damage = 8 + (dexterity * 2)+ (level * 2))
+
+dual_pistols = CharWeapon(name = dual pistols, type = ranged, damage = 16 + dexterity + (level * 2))
+
+rifle = CharWeapon(name = rifle, type = ranged, damage = 20 + (dexterity * 5) + (level * 2))
+
+class EnemyWeapon (object):
+    def __init__(self, name, type, damage):
+        self.name = name
+        self.type = type
+        self.enemydamage = enemydamage
+
+enemy_melee = EnemyWeapon(name = enemy melee, type = melee, enemydamage = 15 + (enemy_strength * 2) + (enemy_level * 3)
+
+enemy_ranged = EnemyWeapon(name = enemy ranged, type = ranged, enemydamage = 10 + (enemy_dexterity * 4) + (enemy_level * 3)
+
+#equiping a weapon
+
+def weapon_selection(chr_class):
+    if chr_class == 1:
+        weapon_add(sword)
+        damage = sword.damage
+    elif chr_class == 2:
+        weapon_add(axe)
+        damage = axe.damage
+    elif chr_class == 3:
+        weapon_add(pistol)
+        damage = pistol.damage
+    elif chr_class == 4:
+        weapon_add(dual_pistols)
+        damage = dual_pistols.damage
+    elif chr_class == 5:
+        weapon_add(rifle)
+        damage = rifle.damage
