@@ -1,0 +1,66 @@
+#contains the code to print current experience and to level up
+
+#level up objects
+
+level_up_stat_1 = randrange(1,7)
+level_up_stat_2 = randrange(1,7)
+level_up_stat_3 = randrange(1,7)
+
+def print_experience(experience):
+    print ('You are level ' + str(level))
+    print ('Your current experience is ' + str(experience))
+    print ('You need ' + str(experience_required - experience) + ' more to level up!')
+
+def level_up(level_up_stat_1, level_up_stat_2, level_up_stat_3):
+    global strength
+    global dexterity
+    global defense
+    global charisma
+    global speed
+    global luck
+    global level
+    global experience
+    global experience_required
+    if experience >= experience_required:
+        level += 1
+        experience -= experience_required
+        experience_required *= 2
+        if level_up_stat_1 == 1:
+            strength += 1
+        elif level_up_stat_1 == 2:
+            dexterity += 1
+        elif level_up_stat_1 == 3:
+            defense += 1
+        elif level_up_stat_1 == 4:
+            charisma += 1
+        elif level_up_stat_1 == 5:
+            speed += 1
+        else:
+            luck += 1
+        if level_up_stat_2 == 1:
+            strength += 1
+        elif level_up_stat_2 == 2:
+            dexterity += 1
+        elif level_up_stat_2 == 3:
+            defense += 1
+        elif level_up_stat_2 == 4:
+            charisma += 1
+        elif level_up_stat_2 == 5:
+            speed += 1
+        else:
+            luck += 1
+        if level_up_stat_3 == 1:
+            strength += 1
+        elif level_up_stat_3 == 2:
+            dexterity += 1
+        elif level_up_stat_3 == 3:
+            defense += 1
+        elif level_up_stat_3 == 4:
+            charisma += 1
+        elif level_up_stat_3 == 5:
+            speed += 1
+        else:
+            luck += 1
+        level_up(level_up_stat_1, level_up_stat_2, level_up_stat_3)
+    else:
+        pass
