@@ -1,0 +1,93 @@
+#contains the code for character stats
+
+#character stats
+
+#strength increases melee damage
+
+strength = 1
+
+#dexterity increases ranged damage
+
+dexterity = 1
+
+#defense reduces the amount of damage taken
+
+defense = 1
+
+#charisma reduces prices
+
+charisma = 1 #add function to reduce prices later
+
+#speed increases attack speed and increases dodge chance
+
+speed = 1
+
+#luck increases the odds of better loot, the chance to dodge, and the chance to land a critical hit
+
+luck = 1 #add function to increase chance of loot later
+
+#enemy stats have the same purpose as character stats with the exception of charisma which would serve no purpose for enemies so has been omitted
+
+enemy_strength = 1
+
+enemy_dexterity = 1
+
+enemy_defense = 1
+
+enemy_speed = 1
+
+enemy_luck = 1
+
+#helper objects
+
+dodge_number = randrange(1,21)
+
+dodge_chance_reduction = 20 - (0.1 * luck) - (0.1 * (speed - enemy_speed))
+
+crit_number = randrange(1,21)
+
+crit_reduction = 20 - (0.1 * luck)
+
+#functions print out stats for character and enemy
+
+def print_char_stats():
+    print ("Strength is " + str(strength))
+    print ("Dexterity is " + str(dexterity))
+    print ("Defense is " + str(defense))
+    print ("Charisma is " + str(charisma))
+    print ("Speed is " + str(speed))
+    print ("Luck is " + str(luck))
+
+def print_enemy_stats():
+    print ("Strength is " + str(enemy_strength))
+    print ("Dexterity is " + str(enemy_dexterity))
+    print ("Defense is " + str(enemy_defense))
+    print ("Speed is " + str(enemy_speed))
+    print ("Luck is " + str(enemy_luck))
+
+#dodge chance based off of a d20 style role with 10 points getting you one additional number
+
+def dodge_chance(dodge_number):
+    if dodge_number >= dodge_chance_reduction:
+        damage = 0
+        print (dodge_description)
+    else:
+        pass
+
+#critical hit chance, similar to dodge chance
+
+def critical_hit_chance (crit_number):
+    if cit_number >= crit_reduction:
+        damage = damage * 2
+        print (critical_hit_description)
+    else:
+        pass
+
+
+#damage taken function
+
+def damage_taken():
+    damage_taken = enemydamage - defense
+    if damage_taken < 0:
+        damage_taken = 0
+    health -= damage_taken
