@@ -1,0 +1,130 @@
+#this code sets up the loot system for the game
+
+#loot
+
+health_pack = Loot(name = 'health pack')
+
+super_charger = Loot(name = 'super charger')
+
+#loot system variables
+
+chance_of_loot_1 = randrange(1,101)
+
+chance_of_loot_2 = randrange(1,101)
+
+chance_of_loot_3 = randrange(1,101)
+
+chance_of_health_pack = randrange(1,101)
+
+chance_of_super_charger = randrange(1,101)
+
+chance_reduction = - luck - level
+
+#loot system definitions
+
+def loot_crate():
+    global credits
+    global character_health
+    global damage
+    if chance_of_loot_1 > 90 - chance_reduction:
+        print ('small credit pack')
+        credits += small_credit_pack
+    elif 50 - chance_reduction < chance_of_loot_1 < 80 - chance_reduction:
+        print ('credit')
+        credits += credit
+    if chance_of_health_pack > 75:
+        print ('health pack')
+        if character_health < character_full_health:
+            character_health += 25
+    if chance_of_super_charger > 75:
+        print ('super charger')
+        damage += 10
+
+
+
+def loot_locker():
+    global credits
+    global character_health
+    global damage
+    if chance_of_loot_1 > 80 - chance_reduction:
+        print ('medium credit pack')
+        credits += medium_credit_pack
+    elif 50 - chance_reduction < chance_of_loot_1 < 80 - chance_reduction:
+        print ('small credit pack')
+        credits += small_credit_pack
+    elif 25 - chance_reduction < chance_of_loot_1 < 50 - chance_reduction:
+        print ('credit')
+        credits += credit
+    if chance_of_loot_2 > 80 - chance_reduction:
+        print ('medium credit pack')
+        credits += medium_credit_pack
+    elif 50 - chance_reduction < chance_of_loot_2 < 80 - chance_reduction:
+        print ('small credit pack')
+        credits += small_credit_pack
+    elif 25 - chance_reduction < chance_of_loot_2 < 50 - chance_reduction:
+        print ('credit')
+        credits += credit
+    if chance_of_health_pack > 75:
+        print ('health pack')
+        if character_health < character_full_health:
+            character_health += 25
+    if chance_of_super_charger > 75:
+        print ('super charger')
+        damage += 10
+
+def loot_chest():
+    global credits
+    global character_health
+    global damage
+    if chance_of_loot_1 > 90 - chance_reduction and level > 9:
+        print ('elerium')
+        credits += elerium
+    elif 75 - chance_reduction < chance_of_loot_1 < 90 - chance_reduction and level > 9:
+        print ('large credit pack')
+        credits += large_credit_pack
+    elif chance_of_loot_1 > 75 - chance_reduction and level < 10:
+        print ('large credit pack')
+        credits += large_credit_pack
+    elif 50 - chance_reduction < chance_of_loot_1 < 75 - chance_reduction:
+        print ('medium credit pack')
+        credits += medium_credit_pack
+    else:
+        print ('small credit pack')
+        credits += small_credit_pack
+    if chance_of_loot_2 > 90 - chance_reduction and level > 9:
+        print ('elerium')
+        credits += elerium
+    elif 75 - chance_reduction < chance_of_loot_2 < 90 - chance_reduction and level > 9:
+        print ('large credit pack')
+        credits += large_credit_pack
+    elif chance_of_loot_2 > 75 - chance_reduction and level < 10:
+        print ('large credit pack')
+        credits += large_credit_pack
+    elif 50 - chance_reduction < chance_of_loot_2 < 75 - chance_reduction:
+        print ('medium credit pack')
+        credits += medium_credit_pack
+    else:
+        print ('small credit pack')
+        credits += small_credit_pack
+    if chance_of_loot_3 > 90 - chance_reduction and level > 9:
+        print ('elerium')
+        credits += elerium
+    elif 75 - chance_reduction < chance_of_loot_3 < 90 - chance_reduction and level > 9:
+        print ('large credit pack')
+        credits += large_credit_pack
+    elif chance_of_loot_3 > 75 - chance_reduction and level < 10:
+        print ('large credit pack')
+        credits += large_credit_pack
+    elif 50 - chance_reduction < chance_of_loot_3 < 75 - chance_reduction:
+        print ('medium credit pack')
+        credits += medium_credit_pack
+    else:
+        print ('small credit pack')
+        credits += small_credit_pack
+    if chance_of_health_pack > 75:
+        print ('health pack')
+        if character_health < character_full_health:
+            character_health += 25
+    if chance_of_super_charger > 75:
+        print ('super charger')
+        damage += 10
