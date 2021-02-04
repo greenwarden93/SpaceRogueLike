@@ -1,0 +1,28 @@
+#contains code to constantly display HUD
+
+# def for HUD
+
+def HUD():
+    while 1 == 1:
+        print (str(character_health) + "/" + str(character_full_health))
+        print (str(experience) + "/" + str(experience_required))
+        print (credits)
+        if quest_type_number == 1:
+            if what_type_of_item_number == 1:
+                print ("Acquire the files")
+            elif what_type_of_item_number == 2:
+                print ("Acquire the artifacts")
+            elif what_type_of_item_number == 3:
+                print ("Acquire the blueprints")
+            elif what_type_of_item_number == 4:
+                print ("Acquire the scrap")
+            elif what_type_of_item_number == 5:
+                print ("Acquire the medicine")
+            elif what_type_of_item_number == 6:
+                print ("Acquire the food supplies")
+            print (str(quest_item_counter) + "/" + str(hidden_item_number))
+        elif quest_type_number == 2:
+            print ("Clear the {blank} from the area")
+            print (str(kill_count) + "/20")
+        elif quest_type_number == 3:
+            print ("Eliminate the leader")
